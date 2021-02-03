@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: GITHUBPAGE
-slug: githubpage
+title: C++ 
+slug: C++ study
 category: study
 menu: false
 order: 1
