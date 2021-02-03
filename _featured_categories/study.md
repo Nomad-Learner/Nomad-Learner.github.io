@@ -6,5 +6,5 @@ menu: true
 submenu: true
 order: 5
 description: >
-  기타 공부
+  관심있는 분야 공부
 ---
