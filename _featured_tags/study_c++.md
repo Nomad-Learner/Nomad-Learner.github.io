@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
 title: C++ 
-slug: C++
+slug: c++
 category: study
 menu: false
 order: 1
