@@ -10,4 +10,30 @@ comments: true
 
 1. C++에서는 #define이 아니라 const, enum을 먼저 써야한다.
 
-<script src="https://gist.github.com/Nomad-Learner/4893a6bc554e3d581eab4a008482ee2e.js"></script>
+
+<pre>
+<code>
+#include<iostream>
+using namespace std;
+
+#define PI 3.141592
+
+void Add(int a)
+{
+
+}
+
+int main()
+{
+	PI;
+	PI;
+	Add(PI);
+	PI;
+	PI;
+
+	return 0;
+}
+
+
+
+
