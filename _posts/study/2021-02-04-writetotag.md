@@ -3,7 +3,7 @@ layout: post
 title:  "C++ tag에 글쓰기"
 subtitle:   "tag 활용"
 categories: study
-tags: C++
+tags: c++
 comments: true
 ---
 
@@ -41,12 +41,12 @@ title은 대문자 slug는 동일한 이름의 소문자로 적어줘야한다.
 
 tag에 맞춰서 글을 쓸 때는
 categories는 _featured에 있는 소문자를 적어주고
-tags는 _featured_tags에 있는 title을 적어주면 된다.(대문자로 적으면 된다.)
+tags는 _featured_tags에 있는 slug을 적어주면 된다.(소문자로 적으면 된다.)
 
 
 1.layout: post
 2.title:  "C++ tag에 글쓰기"
 3.subtitle:   "tag 활용"
 4.categories: study
-5.tags: C++
+5.tags: c++
 6.comments: true
