@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "effective C++ 1"
+title:  "effective C++ 정리1"
 subtitle:   "const, enum"
 categories: study
 tags: c++
