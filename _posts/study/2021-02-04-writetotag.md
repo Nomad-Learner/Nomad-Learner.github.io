@@ -50,3 +50,7 @@ tags는 _featured_tags에 있는 slug을 적어주면 된다.(소문자로 적�
 4.categories: study
 5.tags: c++
 6.comments: true
+
+
+
+https://hyeonjiwon.github.io/blog/markdown_img/ 깃헙 blog에 이미지 삽입하는법 나와있는 곳
