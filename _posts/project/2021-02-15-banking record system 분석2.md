@@ -311,13 +311,18 @@ show_data();
 
 2 ) 위의 예시에서 파일에 12byte | 12byte | 12byte 이렇게 있는 상황에 n = 2를 입력했다 가정하자. 2번째 계좌를 보려는 것이 목적
 
+
 ```c++
 infile.seekg((n - 1) * sizeof(*this));
 ```
 
+
+
 3 ) 이 코드에서 커서를 첫번째 12byte의 마지막으로 이동시켜 놓는다. 12byte |(커서여기) 12byte | 12byte
 
+
 4 ) std::istream::read의 read() 함수가 std::ostream::write이 write() 함수랑 설명이 약간 다르다.
+
 ```c++
 istream& read (char* s, streamsize n);
 ostream& write (const char* s, streamsize n);
