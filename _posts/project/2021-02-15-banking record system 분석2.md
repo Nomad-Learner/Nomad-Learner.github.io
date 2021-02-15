@@ -181,11 +181,11 @@ if (infile.read(reinterpret_cast<char*>(this), sizeof(*this)) )
 ```
 이 부분이 헷갈렸다. while (!infile.eof())를 통해 파일이 끝날 때까지(eofbit가 set될 때까지) 계속 읽어 들인다.
 여기서 read 함수는 3가지 error 조건에 따라 eofbit, failbit, badbit를 set한다.
-|flag|error|
-|------|---|---|
-|eofbit|The function stopped extracting characters because the input sequence has no more characters available (end-of-file reached).|테스트3|
-|failbit|Either the function could not extract n characters or the construction of sentry failed.|테스트3|
-|badbit|Error on stream (such as when this function catches an exception thrown by an internal operation), When set, the integrity of the stream may have been affected.
+
+-  eofbit : The function stopped extracting characters because the input sequence has no more characters available (end-of-file  reached).
+-  failbit : Either the function could not extract n characters or the construction of sentry failed.
+-  badbit :Error on stream (such as when this function catches an exception thrown by an internal operation),
+When set, the integrity of the stream may have been affected.
 출처 : cplusplus.com
 
 
@@ -245,10 +245,12 @@ ex2) infile.seekg(0); -> 커서가 맨 앞에서부터 0번째 뒤에 위치에 
 - ios_base::seekdir 자료형을 가지는 변수 way에 들어갈 수 있는 형태가 3가지 있다.
 
 |쓸 수 있는 것|설명|
-|------|---|---|
+|------|-----|
 |ios_base::beg|파일의 맨 처음에서 기준점이 시작|
 |ios_base::cur|파일에서 현재 커서 위치에서 기준점이 시작|
 |ios_base::end|파일의 가장 끝에서 기준점이 시작|
+
+
 => cplusplus.com에서는 stream이라는 표현을 사용했지만 일단 파일로 생각했다. ios_base :: 에서 시작하라고 나와 있지만
 ios가 ios_base를 상속했으므로 본문 코드에서도 ios::end로 했다.
 
@@ -279,13 +281,21 @@ infile.seekg(0, ios::end);
 int count = infile.tellg() / sizeof(*this);
 ```
 1 ) 파라미터가 2개인 seekg 함수를 사용해서 커서를 파일의 끝으로 이동시키고
+
 2 ) *this는 search_rec() 함수를 호출한 객체 자신이다. 편의상 A라는 객체가 12byte라 가정하자(멤버 변수로 int 3개를 가지고 있다 가정)
+
 2-1 ) ofstream을 통해서 A객체의 내용을 3번 바이너리 파일에 작성했다.
+
 2-2 ) 파일안에는             (12byte | 12byte | 12byte) 이렇게 내용이 있을 것
+
 2-3 ) seekg 함수를 통해 커서는                        | 여기에 위치
+
 3 ) infile.tellg()를 통해서 커서의 현재 위치를 정수로 반환 받는다. 위 예시에서는 48이라는 정수값이 리턴
+
 4 ) 이걸 sizeof(*this) 즉 A객체의 크기(12byte)로 나누면
+
 5 ) 3이 나온다. 그리고 3은 파일에 적혀 있는 A객체 값의 개수이다.
+
 6 ) 위 코드로 현재 파일에 몇개의 정보가 들어가 있는지 계산 한 것
 
 <br/>
@@ -298,7 +308,9 @@ infile.read(reinterpret_cast<char*>(this), sizeof(*this));
 show_data();
 ```
 1 ) 여기 코드는 검색을 account_number로 하지 않고 저장된 순서로 한다.
+
 2 ) 위의 예시에서 파일에 12byte | 12byte | 12byte 이렇게 있는 상황에 n = 2를 입력했다 가정하자. 2번째 계좌를 보려는 것이 목적
+
 ```c++
 infile.seekg((n - 1) * sizeof(*this));
 ```
