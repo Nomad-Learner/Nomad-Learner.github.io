@@ -13,21 +13,28 @@ pwd : print working directory -> 모든 사용자 디렉토리는 /home/ 밑에 
 
 ####  2.
 ls : 디렉토리와 파일명만 뜬다. 이때는 가로로 뜬다.
+
 ls -l: 접근권환까지 해서 디렉토리와 파일명이 뜬다. (세로로 뜬다)
+
 ls -al: linux에서 파일명이 .으로 시작하면 숨김 파일이라는 뜻. a 옵션 덕에 숨김파일까지 같이 뜬다.
 
 오른쪽-> 왼쪽으로 파일명-생성 혹은 최종 수정 시간- 바이트로 나타낸 용량- 그룹계정/소유자계정 - 접근권환
 
 접근권환에서 맨 앞이
 
-- : file
+-기호  : file
+
 d : dirextory
+
 I : Link
-첫번째 rwx(사용자) 두번째 rwx(그룹) 세번쨰(other)의 권한
+
+첫번째 rwx(사용자) 두번째 rwx(그룹) 세번째(other)의 권한
+
 ==> 3bit로 표현해준다.
 
 #### 3.
 chmod: 파일의 접근권한 변경. 777일 때가 rwx rwx rwx인 상황
+
 chmod 664 a.out 이런식으로 쓴다
 
 ####  4.
@@ -43,7 +50,9 @@ rm -f 파일명: 파일삭제
 rm -R 디렉토리명: 디렉토리삭제
 
 linux는 최상위 디렉토리 / 를 기준으로 하위 디렉토리가 만들어지는 구조이다. /는 절대 경로이다.
+
 /root
+
 /home 은 기본으로 있다
 
 linux에 계정을 생성하면(예를들어 guest1) /home/guest1이 생성된다. 즉 home 디렉토리 밑에 계정별로 디렉토리가 생긴다.
@@ -51,8 +60,11 @@ linux에 계정을 생성하면(예를들어 guest1) /home/guest1이 생성된�
 절대경로 vs 상대경로
 
 / 는 절대 위치를 기준으로 잡아준다(절대경로-리눅스 최상위 디렉토리가 기준이 된다)
+
 ./ 는 현재 위치를 기준으로 잡아준다(상대경로)
+
 ../ 는 현재 위치 디렉토리의 상위 디렉토리를 기준으로 잡는다(상대경로)- 이전 디렉토리를 의미한다 생각하기
+
 ~/ 자신의 home 디렉토리를 기준으로 한다.(상대경로)
 
 ####  8.
@@ -61,14 +73,19 @@ cd 디렉토리명 : 디렉토리 이동
 guest1 계정에서 dir1 디렉토리로 이동하는 3가지 방법
 
 절대 경로 기준: cd /home/guest1/dir1  ==> 최상위 디렉토리 / 아래 있는 home 아래 있는 guest1 아래 있는 dir1으로 이동하겠다.
+
 현재 경로 기준: cd ./dir1 ==> 현재 guest1 디렉토리 아래에 있는 dir1 디렉토리로 이동하겠다
+
 홈 경로 기준: cd ~/dir1 ==> home 디렉토리 아래에 있는 dir1 디렉토리로 이동하겠다.
 
 ~/ 이거하면 /home/guest1/ 이거를 앞에 적은거랑 같은 효과인것 같다.
 
 이전 디렉토리 가려면?
+
 cd ../ 하면 이전 디렉토리로 돌아간다
+
 cd / 하면 최상위 디렉토리로 간다
+
 / 에서 cd만 하면 나의 home 디렉토리로 바로 갈 수 있다.
 
 cd ~/
@@ -153,6 +170,7 @@ grep -Hw 문자열1 파일이름1: 정확하게 문자열1을 가지고 있는 �
 
 ####  16.
 less 파일명1: 파일명1의 내용을 읽기 전용으로 연다. 용량이 큰 로그파일은 무조건 less로 열어야 CPU등 자원 낭비를 막을 수
+
 있다. q 누르면 빠져나올 수 있다.
 
 ####  ==============================  이제부터 시스템 명령어 ==================================
@@ -164,6 +182,7 @@ tar xvfz 압축파일명.tar.gz: 압축파일안에 있는 내용을 풀 수 있
 
 ####  18.
 root = sudo (최고 권력자는 root)
+
 sudo 명령어 옵션
 
 ####  19.
@@ -178,6 +197,7 @@ find 경로 조건 target
 
 ####  21.
 명령어 위치 검색
+
 which 명령어: ex) which ls 이런식으로
 
 ####  22.
@@ -236,3 +256,8 @@ man 3 라이브러리[함수명]: 프로그래밍 개발에 필요한 함수들�
 출처
 https://www.youtube.com/watch?v=9_KIdQ8abH4&list=PL6h-5hNOYbqoC96XlIfLWFHmcm3JWdoUG&index=7
 https://m.blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221407173643&proxyReferer=https:%2F%2Fwww.google.com%2F
+https://webisfree.com/2019-02-14/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%83%88%EB%A1%9C%EC%9A%B4-%EC%82%AC%EC%9A%A9%EC%9E%90-user-%EC%B6%94%EA%B0%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
+http://blog.servis.co.kr/index.php/2020/01/29/is-not-in-the-sudoers-file-this-incident-will-be-reported/
+https://so-es-immer.tistory.com/entry/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%9A%B0%EB%B6%84%ED%88%AC-gcc-%EC%84%A4%EC%B9%98-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0-sudo-apt-get-install-gcc
+https://syuda.tistory.com/65
+https://idchowto.com/?p=46187
