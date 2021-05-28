@@ -29,12 +29,13 @@ C++11부터 랜덤변수를 만드는 헤더로 <random> 헤더가 들어가 있
 ####  1) 랜덤 디바이스를 생성 (랜덤 디바이스를 통해 seed 값이 자동으로 바뀐다)
 ####  2) 생성기를 생성한다
 ####  3) 생성기가 따르는 분포를 설정한다
-####  4) 분포가 생성기로 분포를 따르는 난수 생성
+####  4) 분포가 생성기로 분포를 따르는 난수 생성를 생성한다
 
 <br/>
 <br/>
 
 ### 1) 랜덤 디바이스 생성
+
 
 ```c++
 #include <iostream>
@@ -62,7 +63,6 @@ https://www.cplusplus.com/reference/random/
 많은 생성기 중  default_random_engine을 생성기로 사용한다
 
 ```c++
-
 #include <iostream>
 #include <random>
 using namespace std;
@@ -78,7 +78,6 @@ int main()
 	}
 	return 0;
 }
-
 ```
 
 default_random_engine을 생성기로 사용하였으며 생성기의 변수명은 randE이다. 이때 생성기의 변수명 randE안에 랜덤 디바이스의 변수명 re()를 넣어줘야한다. 이제 랜덤한 seed를 이용해서 default_random_engine은 자신이 가진 공식을 사용해 (의사)난수를 생성한다.
@@ -97,7 +96,6 @@ default_random_engine을 생성기로 사용하였으며 생성기의 변수명�
 ##### 분포중에서 베르누이 분포를 제외하고는 전부 class가 template으로 선언되어 있다.
 
 ```c++
-
 #include <iostream>
 #include <random>
 using namespace std;
@@ -111,7 +109,6 @@ int main()
 
 	return 0;
 }
-
 ```
 
 이제 randE라는 생성기가 만들어내는 변수는 평균이 0이고 분산이 100 (표준편차는 10)인 가우시안 함수의 분포를 만족하면서 생성 될 것이다.
@@ -122,8 +119,8 @@ int main()
 ### 4) 분포가 생성기를 사용해 분포를 따르는 난수들을 생성한다.
 
 
-```c++
 
+```c++
 #include <iostream>
 #include <random>
 using namespace std;
@@ -142,7 +139,6 @@ int main()
 
 	return 0;
 }
-
 ```
 
 
