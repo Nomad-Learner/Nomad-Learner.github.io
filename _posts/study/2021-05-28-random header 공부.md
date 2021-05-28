@@ -95,6 +95,7 @@ default_random_engine을 생성기로 사용하였으며 생성기의 변수명�
 
 ##### 분포중에서 베르누이 분포를 제외하고는 전부 class가 template으로 선언되어 있다.
 
+
 ```c++
 #include <iostream>
 #include <random>
@@ -110,6 +111,7 @@ int main()
 	return 0;
 }
 ```
+
 
 이제 randE라는 생성기가 만들어내는 변수는 평균이 0이고 분산이 100 (표준편차는 10)인 가우시안 함수의 분포를 만족하면서 생성 될 것이다.
 
